@@ -4,8 +4,9 @@
   "description": "My simple CV.",
   "main": "src/index.js",
   "scripts": {
-    "dev": "parcel serve -- src/index.html",
-    "build": "parcel build -- src/index.html"
+    "dev": "vite",
+    "build": "vite build --outDir docs --base \"/cv\"",
+    "serve": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -19,9 +20,9 @@
   "homepage": "https://github.com/natsukagami/simple-cv#readme",
   "dependencies": {
     "autoprefixer": "^10.2.5",
-    "parcel": "^2.0.0-beta.3.1",
     "postcss": "^8.3.0",
     "postcss-modules": "^4.0.0",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^2.1.2",
+    "vite": "^2.3.3"
   }
 }
