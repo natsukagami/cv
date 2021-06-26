@@ -1,0 +1,35 @@
+# calamity-slash package description
+# hpack format
+spec-version: 0.30.0
+
+# Package information
+name: cv
+version: 0.2
+synopsis: My personal CV.
+description: My persional CV, rendered from the `blaze-html` library.
+github: natsukagami/cv
+stability: experimental
+
+# About author
+author: Natsu Kagami
+maintainer: nki@nkagami.me
+license: GPL-3.0-or-later
+
+# Library
+
+dependencies:
+# Base dependencies
+  - base ^>= 4.14
+  - protolude >= 0.3 && < 0.4
+# Blaze templating
+  - blaze-html >= 0.9 && < 0.10
+
+library:
+  source-dirs: src
+
+executables:
+  cv-gen:
+    main:                Main.hs
+    source-dirs:         app
+    dependencies:
+    - cv
