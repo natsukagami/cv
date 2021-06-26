@@ -11,7 +11,7 @@ header = B.header $ name >> contacts
 name :: Html
 name =
   h1 ! A.class_ "text-6xl" $
-    "Nguyen"
+    "Nguyen "
       >> B.b "Pham"
 
 contacts :: Html
