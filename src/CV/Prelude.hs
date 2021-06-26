@@ -47,6 +47,11 @@ card_ = c_ . flip (<>) " space-y-4 shadow hover:shadow-xl transition-shadow bord
 cardTitle_ :: AttributeValue -> Attribute
 cardTitle_ = c_ . flip (<>) " text-2xl"
 
--- | Convert text into an @AttributeValue@.
+-- | Convert any value that satisfies @Show@ into an @AttributeValue@.
+-- Does NOT work with @Text@, use @textAttr@ instead.
 toAttr :: Show a => a -> AttributeValue
 toAttr = fromString . show
+
+-- | Convert text into an @AttributeValue@.
+textAttr :: Text -> AttributeValue
+textAttr = fromString . T.unpack

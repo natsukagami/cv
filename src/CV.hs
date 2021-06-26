@@ -4,6 +4,7 @@ import CV.Header as CV
 import CV.Prelude
 import qualified CV.Section.Awards as CV
 import CV.Section.Education as CV
+import qualified CV.Section.Skills as CV
 import CV.Section.Work as CV
 import Protolude
 import Text.Blaze.Html5 as B
@@ -15,6 +16,7 @@ site = docTypeHtml $ do
   CV.head
   CV.body
   CV.footer
+  CV.skills
 
 -- | Head object
 head :: Html

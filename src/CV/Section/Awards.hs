@@ -86,4 +86,4 @@ badge Badge {..} = ifLink $
   where
     ifLink = case badgeLink of
       "" -> identity
-      _ -> link_ "" . Link (toAttr badgeLink)
+      _ -> link_ "" . Link (textAttr badgeLink)

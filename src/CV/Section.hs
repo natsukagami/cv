@@ -18,7 +18,7 @@ section title body = B.section
     body
     pure ()
   where
-    anchor = fromString $ T.unpack $ toAnchor title
+    anchor = textAttr $ toAnchor title
 
 -- | Convert text into anchors
 toAnchor :: Text -> Text
