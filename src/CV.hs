@@ -14,6 +14,7 @@ site :: Html
 site = docTypeHtml $ do
   CV.head
   CV.body
+  CV.footer
 
 -- | Head object
 head :: Html
@@ -46,3 +47,15 @@ body = B.body
     CV.education
     CV.awards
     pure ()
+
+footer = B.footer ! c_ "text-center text-xs mt-4 text-indigo-400" $ do
+  "This CV was written using "
+  link_
+    "hover:text-indigo-800 text-indigo-600"
+    $ Link "https://hackage.haskell.org/package/blaze-html" "blaze-html"
+  " and "
+  link_ "hover:text-indigo-800 text-indigo-600" $
+    Link "https://tailwindcss.org" "TailwindCSS,"
+  " source code is available on "
+  link_ "hover:text-indigo-800 text-indigo-600" $
+    Link "https://github.com/natsukagami/cv" "my GitHub repo"
