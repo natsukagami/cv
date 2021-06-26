@@ -5,8 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --outDir docs --base \"/cv\"",
-    "serve": "vite preview"
+    "build": "npm run hs:build && vite build --outDir docs --base \"/cv/\"",
+    "serve": "npm run build && rm -f dist && ln -s docs dist && vite preview --base \"/cv/\"",
+    "hs:build": "hpack && cabal run cv-gen index.html",
+    "hs:dev": "chokidar \"src/**/*.hs\" \"app/*.hs\" \"package.yaml\" -c \"npm run hs:build\""
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,8 @@
     "postcss-modules": "^4.0.0",
     "tailwindcss": "^2.1.2",
     "vite": "^2.3.3"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^2.1.0"
   }
 }

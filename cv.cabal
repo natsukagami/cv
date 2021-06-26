@@ -1,0 +1,57 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.34.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           cv
+version:        0.2
+synopsis:       My personal CV.
+description:    My persional CV, rendered from the `blaze-html` library.
+stability:      experimental
+homepage:       https://github.com/natsukagami/cv#readme
+bug-reports:    https://github.com/natsukagami/cv/issues
+author:         Natsu Kagami
+maintainer:     nki@nkagami.me
+license:        GPL-3.0-or-later
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/natsukagami/cv
+
+library
+  exposed-modules:
+      CV
+      CV.Header
+      CV.Prelude
+      CV.Section
+      CV.Section.Awards
+      CV.Section.Education
+      CV.Section.Work
+  other-modules:
+      Paths_cv
+  hs-source-dirs:
+      src
+  default-extensions: NoImplicitPrelude OverloadedStrings RecordWildCards
+  build-depends:
+      base >=4.14 && <4.15
+    , blaze-html >=0.9 && <0.10
+    , protolude >=0.3 && <0.4
+    , text >=1.2 && <1.3
+  default-language: Haskell2010
+
+executable cv-gen
+  main-is: Main.hs
+  other-modules:
+      Paths_cv
+  hs-source-dirs:
+      app
+  default-extensions: NoImplicitPrelude OverloadedStrings RecordWildCards
+  build-depends:
+      base >=4.14 && <4.15
+    , blaze-html >=0.9 && <0.10
+    , cv
+    , protolude >=0.3 && <0.4
+    , text >=1.2 && <1.3
+  default-language: Haskell2010
