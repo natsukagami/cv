@@ -1,10 +1,10 @@
 module Main where
 
 import CV
-import Data.Text as T (pack)
+import Data.Text.Lazy as T (toStrict)
 import Protolude
 import System.Environment (getArgs)
-import Text.Blaze.Html.Renderer.Pretty
+import Text.Blaze.Html.Renderer.Text
 
 main :: IO ()
 main = do
@@ -12,4 +12,4 @@ main = do
   let write = case args of
         [f] -> writeFile f
         _ -> putStr
-  write . T.pack $ renderHtml site
+  write $ T.toStrict $ renderHtml site

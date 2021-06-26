@@ -18,7 +18,7 @@ workExperience = CV.section "Work Experience" $ mapM_ job_ jobs
         Nothing
         "January - April 2021"
         [ "Contributed as part of University of Waterloo's " >> B.i "Undergraduate Research Assistant" >> " program.",
-          "Improved the initialization checker of the" >> hoverB "Scala 3" >> "compiler on early promotion cases.",
+          "Improved the initialization checker of the " >> hoverB "Scala 3" >> " compiler on early promotion cases.",
           "Reduced the number of false-positions by the checker by 40% on common codebases."
         ]
     multibaas =
@@ -28,9 +28,9 @@ workExperience = CV.section "Work Experience" $ mapM_ job_ jobs
         "Blockchain Software Engineer"
         (Just "Tokyo, Japan")
         "Summer 2019-2021"
-        [ "Developed a friendly REST API over the Blockchain API using " >> hoverB "Go," >> "deployable as a service.",
+        [ "Developed a friendly REST API over the Blockchain API using " >> hoverB "Go" >> ", deployable as a service.",
           "Designed an intuitive Blockchain and Smart Contracts management UI in " >> hoverB "Vue.",
-          "Contributed bugfixes and new features to the" >> hoverB "go‑ethereum and OpenAPI" >> "open source repositories."
+          "Contributed bugfixes and new features to the " >> hoverB "go‑ethereum and OpenAPI" >> " open source repositories."
         ]
 
 personalProjects :: Html
@@ -45,9 +45,9 @@ personalProjects = CV.section "Personal Projects" $ mapM_ job_ projects
         Nothing
         "2015 - Present"
         [ "Created a website that hosts programming challenges and automatically judges codes based on case-testing.",
-          "Integrated modern architecture with REST API using " >> hoverB "Go" >> " and " >> hoverB "Rust;" >> "serving thousands of connections in milliseconds.",
-          "Leveraged" >> hoverB "React" >> "for a smooth single page application experience.",
-          "Used currently by" >> hoverB "5000+ high-school and university students" >> "in Vietnam."
+          "Integrated modern architecture with REST API using " >> hoverB "Go" >> " and " >> hoverB "Rust" >> "; serving thousands of connections in milliseconds.",
+          "Leveraged " >> hoverB "React" >> " for a smooth single page application experience.",
+          "Used currently by " >> hoverB "5000+ high-school and university students" >> " in Vietnam."
         ]
     kjudge =
       Job
@@ -56,10 +56,10 @@ personalProjects = CV.section "Personal Projects" $ mapM_ job_ projects
         "Creator and Maintainer"
         Nothing
         "2020 - Present"
-        [ "Written completely in" >> hoverB "Go" >> "for a simple one-binary service.",
-          "Leverages" >> hoverB "Docker" >> "for an integrated one-command deployment.",
+        [ "Written completely in " >> hoverB "Go" >> " for a simple one-binary service.",
+          "Leverages " >> hoverB "Docker" >> " for an integrated one-command deployment.",
           "Supports multiple competitive programming styles (IOI, ICPC) with flexibility in problem design.",
-          "Used in many local programming contests in Vietnam as a replacement for the " >> link_ "hover:text-blue-400 text-blue-600" (Link "https://github.com/ioi/cms" "official IOI platform.")
+          "Used in many local programming contests in Vietnam as a replacement for the " >> link_ "hover:text-blue-400 text-blue-600" (Link "https://github.com/ioi/cms" "official IOI platform") >> "."
         ]
 
 data Job = Job

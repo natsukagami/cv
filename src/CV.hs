@@ -16,7 +16,6 @@ site = docTypeHtml $ do
   CV.head
   CV.body
   CV.footer
-  CV.skills
 
 -- | Head object
 head :: Html
@@ -48,6 +47,7 @@ body = B.body
     CV.personalProjects
     CV.education
     CV.awards
+    CV.skills
     pure ()
 
 footer = B.footer ! c_ "text-center text-xs mt-4 text-indigo-400" $ do

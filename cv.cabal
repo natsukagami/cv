@@ -28,6 +28,7 @@ library
       CV.Section
       CV.Section.Awards
       CV.Section.Education
+      CV.Section.Skills
       CV.Section.Work
   other-modules:
       Paths_cv
