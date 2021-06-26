@@ -15,12 +15,18 @@ author: Natsu Kagami
 maintainer: nki@nkagami.me
 license: GPL-3.0-or-later
 
+default-extensions:
+- NoImplicitPrelude 
+- OverloadedStrings
+- RecordWildCards
+
 # Library
 
 dependencies:
 # Base dependencies
   - base ^>= 4.14
   - protolude >= 0.3 && < 0.4
+  - text ^>= 1.2
 # Blaze templating
   - blaze-html >= 0.9 && < 0.10
 

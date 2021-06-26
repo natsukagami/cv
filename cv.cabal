@@ -23,14 +23,22 @@ source-repository head
 library
   exposed-modules:
       CV
+      CV.Header
+      CV.Prelude
+      CV.Section
+      CV.Section.Awards
+      CV.Section.Education
+      CV.Section.Work
   other-modules:
       Paths_cv
   hs-source-dirs:
       src
+  default-extensions: NoImplicitPrelude OverloadedStrings RecordWildCards
   build-depends:
       base >=4.14 && <4.15
     , blaze-html >=0.9 && <0.10
     , protolude >=0.3 && <0.4
+    , text >=1.2 && <1.3
   default-language: Haskell2010
 
 executable cv-gen
@@ -39,9 +47,11 @@ executable cv-gen
       Paths_cv
   hs-source-dirs:
       app
+  default-extensions: NoImplicitPrelude OverloadedStrings RecordWildCards
   build-depends:
       base >=4.14 && <4.15
     , blaze-html >=0.9 && <0.10
     , cv
     , protolude >=0.3 && <0.4
+    , text >=1.2 && <1.3
   default-language: Haskell2010
