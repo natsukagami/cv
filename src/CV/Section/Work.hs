@@ -24,7 +24,7 @@ workExperience = CV.section "Work Experience" $ mapM_ job_ jobs
     multibaas =
       Job
         (Link "https://curvegrid.com" "Curvegrid MultiBaas")
-        "Software development playform on Ethereum Blockchain"
+        "Software development platform on Ethereum Blockchain"
         "Blockchain Software Engineer"
         (Just "Tokyo, Japan")
         "Summer 2019-2021"
