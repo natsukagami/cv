@@ -84,15 +84,15 @@ job_ Job {..} = B.section ! card_ "group" $ header >> main
         -- Job position
         div_ "pr-2 uppercase" jobPosition
         div_ "block flex-grow" $ pure () -- Splitter
-        div_ "text-indigo-800" $ do
+        div_ "text-indigo-800 text-right" $ do
           -- Job location, if exists
           case jobLocation of
-            Just loc -> span_ "px-2 border-r-2" loc
+            Just loc -> span_ "pr-2 md:pl-2 border-r-2" loc
             Nothing -> pure ()
-          span_ "px-2" jobTime
+          span_ "pl-2 md:pr-2" jobTime
     main =
       B.main $
-        B.ul ! c_ "list-disc list-inside" $
+        B.ul ! c_ "list-disc list-inside text-justify" $
           mapM_ B.li jobDesc
 
 hoverB :: Html -> Html

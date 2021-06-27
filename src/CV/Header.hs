@@ -18,7 +18,7 @@ contacts :: Html
 contacts =
   section
     ! B.customAttribute "aria-roledescription" "contacts"
-    ! A.class_ "flex flex-row gap-6 pt-3"
+    ! A.class_ "flex flex-row gap-6 pt-3 flex-wrap"
     $ sequence_
       [ toContact "Email" "hover:text-green-400" "📧" "mailto:nki@nkagami.me" "nki@nkagami.me",
         toContact "Personal Website" "hover:text-red-400" "🌐" "https://blog.nkagami.me" "blog.nkagami.me",

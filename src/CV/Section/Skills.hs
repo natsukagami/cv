@@ -11,7 +11,7 @@ import qualified Text.Blaze.Html5.Attributes as A
 skills :: Html
 skills =
   CV.section "Skills" $
-    div_ "grid lg:grid-cols-2 grid-cols-1 space-x-2" $ appDev >> foundational
+    div_ "grid lg:grid-cols-2 grid-cols-1 lg:space-x-2 space-y-2 lg:space-y-0" $ appDev >> foundational
 
 appDev :: Html
 appDev =

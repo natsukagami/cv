@@ -13,20 +13,20 @@ education = CV.section "Education" $
       -- Icon on hover
       B.img
         ! A.style "height: 10vh"
-        ! c_ "group-hover:block hidden"
+        ! c_ "lg:group-hover:block hidden"
         ! A.src "https://uwaterloo.ca/brand/sites/ca.brand/files/universityofwaterloo_logo_vert_rgb.png"
       B.header ! c_ "flex-grow flex flex-col justify-center" $ do
         h3 ! cardTitle_ "flex flex-row justify-between items-baseline" $ do
           div_ "" $ link_ "hover:text-blue-600" $ Link "https://cs.uwaterloo.ca" "University of Waterloo"
-          div_ "text-base text-indigo-800" "Waterloo, ON, Canada"
+          div_ "text-base text-indigo-800 text-right" "Waterloo, ON, Canada"
         div_ "flex flex-row justify-between text-gray-800" $ do
           div_ "" "Candidate for Honours Bachelors in Computer Science"
-          div_ "italic" "2018 - 2021 (currently 4A)"
+          div_ "italic text-right" "2018 - 2021 (currently 4A)"
     B.main $ do
-      div_ "text-lg" $ statWithBar B.div $ ClassStat "Overall GPA" (pure ()) 93
-      span_ "mb-2 text-lg text-bold" "Relevant Classes:"
-      B.ul ! c_ "list-inside list-disc grid grid-cols-2" $ do
-        mapM_ stat classes
+      div_ "text-lg" $ stat B.div $ ClassStat "Overall GPA" "" 93
+      div_ "mb-2 text-lg text-bold lg:group-hover:text-center" "Relevant Classes:"
+      B.ul ! c_ "list-inside list-disc grid lg:grid-cols-2 grid-cols-1" $ do
+        mapM_ (stat B.li) classes
   where
     classes =
       [ ClassStat "CS 442" "Principles of Programming Languages" 96,
@@ -37,29 +37,29 @@ education = CV.section "Education" $
 
 data ClassStat = ClassStat
   { classCode :: Html,
-    className :: Html,
+    className :: Text,
     classPerf :: Int
   }
 
-stat s = do
+stat elem s = do
   -- Only for large screen and on-hover
-  div_ "lg:group-hover:block hidden col-span-2" $ statWithBar B.li s
+  div_ "lg:group-hover:block hidden col-span-2" $ statWithBar elem s
   -- For everything else
-  div_ "lg:group-hover:hidden" $ statSimple s
+  div_ "lg:group-hover:hidden" $ statSimple elem s
 
-statSimple :: ClassStat -> Html
-statSimple ClassStat {..} = B.li ! c_ "col-span-2" $ do
+statSimple :: (Html -> Html) -> ClassStat -> Html
+statSimple elem ClassStat {..} = elem ! c_ "col-span-2" $ do
   B.b classCode
-  ": "
-  className
-  toHtml $ (" (" :: Text) <> show classPerf <> "%)"
+  case className of
+    "" -> pure ()
+    _ -> toHtml $ ": " <> className
+  toHtml $ (" - " :: Text) <> show classPerf <> "%"
 
 statWithBar :: (Html -> Html) -> ClassStat -> Html
 statWithBar elem ClassStat {..} = elem ! c_ "grid grid-cols-3 space-y-2" $ do
   div_ "col-span-2" $ do
     B.b classCode
-    ": "
-    className
+    toHtml $ ": " <> className
   div_ "flex flex-row items-center" $ do
     B.progress
       ! c_ "w-full flex-grow mr-1"

@@ -26,7 +26,7 @@ awards = CV.section "Awards and Scholarships" $ mapM_ award awards
                 acmICPC >> " - World Finals"
                 div_ "text-sm text-gray-600" $ "team: " >> B.b "unsigned"
           )
-          [Badge "https://icpc.global/community/results-2018" "🌏 #14" (badgeFmt "Beijing 2018" "")]
+          [Badge "https://icpc.global/community/results-2018" (span_ "md:inline hidden" "🌏 " >> "#14") (badgeFmt "Beijing 2018" "")]
           [ "Participated in the world's most prestigious programming competition for university students.",
             "Placed in top 15 out of more than 100 teams."
           ],
@@ -73,7 +73,7 @@ award Award {..} = B.section ! card_ "" $ do
     B.div ! cardTitle_ "" $ link_ "hover:text-blue-600" awardTitle
     -- Badges
     div_ "flex flex-row space-x-2" $ mapM_ badge awardBadges
-  B.ul ! c_ "list-inside list-disc" $ mapM_ B.li awardDesc
+  B.ul ! c_ "list-inside list-disc text-justify" $ mapM_ B.li awardDesc
 
 badge :: Badge -> Html
 badge Badge {..} = ifLink $
