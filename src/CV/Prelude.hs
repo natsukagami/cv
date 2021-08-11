@@ -41,7 +41,7 @@ c_ = A.class_
 
 -- | Card CSS attributes.
 card_ :: AttributeValue -> Attribute
-card_ = c_ . flip (<>) " space-y-4 shadow hover:shadow-xl transition-shadow border rounded p-4"
+card_ = c_ . flip (<>) " space-y-4 shadow hover:shadow-xl print:hover:shadow-none print:shadow-none transition-shadow border rounded p-4"
 
 -- | Card Title CSS attributes
 cardTitle_ :: AttributeValue -> Attribute
