@@ -21,7 +21,7 @@ education = CV.section "Education" $
           div_ "text-base text-indigo-800 text-right" "Waterloo, ON, Canada"
         div_ "flex flex-row justify-between text-gray-800" $ do
           div_ "" "Candidate for Honours Bachelors in Computer Science"
-          div_ "italic text-right" "Sep. 2018 - Dec 2021 (expected, currently 4B)"
+          div_ "italic text-right" "Sep. 2018 - Dec. 2021 (expected, currently 4B)"
     B.main $ do
       div_ "text-lg" $ stat B.div $ ClassStat "Overall GPA" "" 93
       div_ "mb-2 text-lg text-bold lg:group-hover:text-center" "Relevant Classes:"

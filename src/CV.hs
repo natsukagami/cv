@@ -43,9 +43,9 @@ body = B.body
   $ do
     CV.header
     -- Sections one by one
+    CV.education
     CV.workExperience
     CV.personalProjects
-    CV.education
     CV.awards
     CV.skills
     pure ()
